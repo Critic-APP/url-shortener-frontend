@@ -2,16 +2,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App.tsx";
+import NoMatch from "./components/404.tsx";
 import { Toaster as Sonner } from "./components/ui/sonner.tsx";
 import "./index.css";
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
-} from "react-router-dom";
-import NoMatch from "./components/404.tsx";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
