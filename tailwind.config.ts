@@ -12,6 +12,9 @@ const config: Config = {
       center: true,
     },
     extend: {
+      screens: {
+        "2xl": "1400px",
+      },
       colors: {
         primary: {
           base: "#FAEEE7",

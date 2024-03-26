@@ -5,13 +5,37 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import { Toaster as Sonner } from "./components/ui/sonner.tsx";
 import "./index.css";
-
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+import NoMatch from "./components/404.tsx";
 const queryClient = new QueryClient();
-
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  { path: "404", element: <NoMatch /> },
+  { path: "*", element: <NoMatch /> },
+]);
+// const router = createBrowserRouter(
+//   createRoutesFromElements(
+//     <>
+//       <Route path="/" element={<App />}>
+//         <Route path="404" element={<NoMatch />} />
+//       </Route>
+//       <Route path="*" element={<NoMatch />} />
+//     </>
+//   )
+// );
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <App />
+      <RouterProvider router={router} />
+
       {/* <Toaster /> */}
       <Sonner
         richColors

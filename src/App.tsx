@@ -1,5 +1,4 @@
 import line from "@/assets/Line 40.svg";
-import hline from "@/assets/Line 41.svg";
 import downarrow from "@/assets/down-arrow.svg";
 import dot from "@/assets/ellipseicon.svg";
 import { useMutation } from "@tanstack/react-query";
@@ -47,8 +46,12 @@ function App() {
       <section className="container -mt-5 px-4 py-7 flex flex-col items-center justify-center gap-y-4">
         <div className="relative text-primary-header text-balance text-start md:text-center font-extrabold gap-y-2 mx-auto">
           {/* <h1 className="font-sans text-3xl sm:text-7xl">Shorten your URLs</h1> */}
-          <h1 className="text-3xl sm:text-7xl">Shorten your URLs</h1>
-          <h1 className="text-3xl sm:text-7xl">simple and easy</h1>
+          <h1 className="text-3xl sm:text-5xl lg:text-7xl 2xl:text-[7.5rem]">
+            Shorten your URLs
+          </h1>
+          <h1 className="text-3xl sm:text-5xl lg:text-7xl 2xl:text-[7.5rem]">
+            simple and easy
+          </h1>
           {/* <Dot className="size-9 absolute top-0 left-1 " /> */}
           {/* <Dot className="size-10 absolute" /> */}
           <img
@@ -79,7 +82,7 @@ function App() {
           {/* <img className="absolute top-0 h-full w-px" src={line} /> */}
         </div>
         <div className="grid grid-flow-col">
-          <p className="sm:my-4 text-lg sm:text-2xl text-primary-text">
+          <p className="sm:my-4 text-lg sm:text-2xl xl:text-3xl text-primary-text">
             Just paste your link{" "}
           </p>
           <span className="inline-flex items-center">
@@ -99,7 +102,7 @@ function App() {
           <input
             aria-label="search"
             required
-            className="text-primary-text px-5 py-3 w-full placeholder-gray-500 border-black border-2 focus:border-slate-500 focus:ring-slate-500 rounded-md focus:ring-1"
+            className="text-primary-text md:px-5 md:py-3 w-full placeholder-gray-500 border-black border-2 focus:border-slate-500 focus:ring-slate-500 rounded-md focus:ring-1"
             type="url"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
