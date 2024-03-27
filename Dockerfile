@@ -1,15 +1,23 @@
-FROM node:20-alpine
-
+FROM node:20-alpine as builder
 WORKDIR /app
+COPY . /app
 
-COPY package.json .
+RUN ls
 
-RUN npm install
+RUN npm ci
 
 COPY . .
-
 RUN npm run build
 
-EXPOSE 8080
+# Step 2: Set up the production environment
+FROM nginx:stable-alpine
 
-CMD [ "npm", "run", "preview" ]
+
+COPY --from=builder /app/dist /usr/share/nginx/html
+# COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
+
+RUN ls /usr/share/nginx/html
+
+
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
