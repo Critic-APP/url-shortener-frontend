@@ -15,7 +15,7 @@ import { ShortenURLResponse, ValidationError } from "./interface";
 function App() {
   const [open, setOpen] = useState(false);
   const [url, setUrl] = useState("");
-  const [urlData, setUrlData] = useState({});
+  const [urlData, setUrlData] = useState<ShortenURLResponse | null>();
   const mutation = useMutation({
     mutationKey: ["shorten"],
     mutationFn: async (url: string): Promise<ShortenURLResponse> => {
