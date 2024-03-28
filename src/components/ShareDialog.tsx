@@ -15,6 +15,8 @@ import { ShortenURLResponse } from "@/interface";
 import { shareLink } from "@/lib/utils";
 import { Copy } from "lucide-react";
 import { toast } from "sonner";
+import { useToast } from "./ui/use-toast";
+
 // import { Input } from "@/components/ui/input";
 // import { Label } from "@/components/ui/label";
 
@@ -55,6 +57,7 @@ export function ShareDialog({
     {
       icon: twitter,
       text: "X(Twitter)",
+      href: data.twitter,
     },
     {
       icon: facebook,
@@ -74,9 +77,16 @@ export function ShareDialog({
     try {
       if (!canShare) {
         if (navigator.clipboard) {
-          navigator.clipboard
-            .writeText(url)
-            .then(() => toast.success("Copied to clipboard"));
+          navigator.clipboard.writeText(url).then(() =>
+            toast.success("Copied to clipboard", {
+              duration: 1000,
+              className: "bg-green-500",
+            })
+          );
+          // rtoast({
+          //   title: "Scheduled: Catch up",
+          //   description: "Friday, February 10, 2023 at 5:57 PM",
+          // });
         } else {
           toast.error("Error copying to clipboard");
         }
