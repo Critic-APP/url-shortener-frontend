@@ -15,30 +15,11 @@ import { ShortenURLResponse } from "@/interface";
 import { shareLink } from "@/lib/utils";
 import { Copy } from "lucide-react";
 import { toast } from "sonner";
-import { useToast } from "./ui/use-toast";
+// import { useToast } from "./ui/use-toast";
 
 // import { Input } from "@/components/ui/input";
 // import { Label } from "@/components/ui/label";
 
-// const socials = [
-//   {
-//     icon: whatsapp,
-//     text: "Whatsapp",
-//   },
-//   {
-//     icon: twitter,
-//     text: "X(Twitter)",
-//   },
-//   {
-//     icon: facebook,
-//     text: "Facebook",
-//   },
-
-//   {
-//     icon: gmail,
-//     text: "Gmail",
-//   },
-// ];
 export function ShareDialog({
   data,
   open,
@@ -80,7 +61,7 @@ export function ShareDialog({
           navigator.clipboard.writeText(url).then(() =>
             toast.success("Copied to clipboard", {
               duration: 1000,
-              className: "bg-green-500",
+              // className: "bg-green-500",
             })
           );
           // rtoast({
@@ -129,7 +110,7 @@ export function ShareDialog({
     // }
   }
   return (
-    <Dialog open={open} modal={false} onOpenChange={setOpen}>
+    <Dialog open={open} modal={true} onOpenChange={setOpen}>
       {/* <DialogTrigger asChild>
         <Button variant="outline">Edit Profile</Button>
       </DialogTrigger> */}
@@ -163,7 +144,7 @@ export function ShareDialog({
             </Button>
           </div>
         </div>
-        <div className="text-center space-y-2">
+        <div className="text-center space-y-3">
           <p>Share via</p>
           <div className="flex justify-around gap-4">
             {socials.map((item) => (
