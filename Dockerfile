@@ -4,7 +4,7 @@ COPY . /app
 
 RUN ls
 
-RUN npm ci
+RUN npm install
 
 COPY . .
 RUN npm run build
