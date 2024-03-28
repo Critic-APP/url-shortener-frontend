@@ -2,6 +2,7 @@ export interface ShortenURLResponse {
   short_url: string;
   url: string;
   whatsapp: string;
+  twitter: string;
   facebook: string;
   gmail: string;
 }
