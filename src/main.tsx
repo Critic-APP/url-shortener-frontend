@@ -9,7 +9,6 @@ import { Toaster as Sonner } from "./components/ui/sonner.tsx";
 import "./index.css";
 import { Toaster } from "./components/ui/toaster.tsx";
 const queryClient = new QueryClient();
-console.log(import.meta.env.BASE_URL, "url");
 console.log(import.meta.env);
 
 const router = createBrowserRouter([
