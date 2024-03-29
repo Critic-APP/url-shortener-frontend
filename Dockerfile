@@ -20,6 +20,10 @@ COPY nginx.conf /etc/nginx/nginx.conf
 # RUN cat /etc/nginx/nginx.conf
 RUN ls /usr/share/nginx/html
 
+ARG VITE_URL
+ARG RAILWAY_PUBLIC_DOMAIN
+RUN echo $VITE_URL
+RUN echo $RAILWAY_PUBLIC_DOMAIN
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
