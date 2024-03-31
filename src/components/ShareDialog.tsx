@@ -13,12 +13,10 @@ import {
 } from "@/components/ui/dialog";
 import { ShortenURLResponse } from "@/interface";
 import { shareLink } from "@/lib/utils";
-import { Copy } from "lucide-react";
+import { Copy, QrCode } from "lucide-react";
 import { toast } from "sonner";
+import { DownloadQR } from "./DownloadQR";
 // import { useToast } from "./ui/use-toast";
-
-// import { Input } from "@/components/ui/input";
-// import { Label } from "@/components/ui/label";
 
 export function ShareDialog({
   data,
@@ -117,14 +115,14 @@ export function ShareDialog({
       <DialogContent className="rounded-lg w-10/12 sm:max-w-lg text-black font-medium p-4 pb-6 sm:py-12 sm:px-16 sm:w-full">
         <DialogHeader>
           <DialogTitle className="sm:text-2xl text-center font-semibold">
-            Link is ready!
+            Link is ready!🎉
           </DialogTitle>
           <DialogDescription className="text-center">
             Copy your shortened URL and share{" "}
           </DialogDescription>
         </DialogHeader>
 
-        <div className="sm:grid sm:grid-cols-12 gap-4 space-y-1 sm:space-y-0">
+        <div className="flex flex-col gap-4 space-y-1 sm:space-y-0">
           <input
             aria-label="search"
             className=" w-full col-span-8 max-w-sm text-primary-text sm:px-5 sm:py-3 placeholder-gray-500 border-black border-2 focus:border-slate-500 focus:ring-slate-500 rounded-md focus:ring-1"
@@ -133,14 +131,29 @@ export function ShareDialog({
             readOnly
             placeholder="Shortened link here..."
           />
-          <div className="col-span-4 items-center gap-4">
+          <div className="flex justify-center items-center gap-4">
+            <DownloadQR
+              short_url={data.short_url}
+              trigger={
+                <Button
+                  type="button"
+                  variant={"shadow"}
+                  className="gap-x-2 h-full w-full bg-primary-button"
+                >
+                  <QrCode />
+                  <span className="text-base">QR</span>
+                </Button>
+              }
+            />
+
             <Button
+              type="button"
               onClick={() => copyToClipboard(data.short_url)}
               variant={"shadow"}
               className="gap-x-2 h-full w-full bg-primary-button"
             >
               <Copy />
-              Copy
+              <span className="text-base">Copy</span>
             </Button>
           </div>
         </div>
@@ -150,6 +163,7 @@ export function ShareDialog({
             {socials.map((item) => (
               <div key={item.text} className="flex flex-col items-center">
                 <Button
+                  type="button"
                   variant={"shadow"}
                   size={"icon"}
                   className="relative bg-primary-button rounded-full p-2.5"

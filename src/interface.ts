@@ -16,3 +16,6 @@ export interface Detail {
   msg: string;
   type: string;
 }
+export interface QRResponse {
+  qr_code: string;
+}
