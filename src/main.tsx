@@ -38,11 +38,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         richColors
         closeButton={true}
         position="top-right"
-        // toastOptions={{
-        //   style: { zIndex: 999 },
-        //   classNames: { success: "true" },
-        // }}
-        className="z-[9999]"
+        toastOptions={{}}
+        // className="z-[9999]"
       />
 
       <ReactQueryDevtools initialIsOpen={false} />
