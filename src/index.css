@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 @font-face {
-  font-family: Kumbh Sans, sans-serif;
-  src: url("./fonts/Kumbh_Sans/KumbhSans-VariableFont_YOPQ\,wght.ttf")
-    local("Kumbh Sans") format("truetype-variations");
+  font-family: "Kumbh Sans";
+  src: url("./fonts/Kumbh_Sans/KumbhSans-VariableFont_YOPQwght.ttf")
+    format("truetype-variations");
   font-optical-sizing: auto;
   /* font-variation-settings: "YOPQ" 300; */
   /* font-variant: normal; */
-  /* font-display: swap; */
+  font-display: swap;
   font-weight: 100 900;
   /* font-stretch: 75% 125%; */
   /* font-style: normal; */
@@ -32,21 +32,8 @@
 }
 
 body {
-  /* margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px; */
+  background-image: url("/src/assets/lines.svg");
+  background-size: contain;
+  background-position: center;
   min-height: 100vh;
 }
-
-/* button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-} */
