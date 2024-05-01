@@ -18,6 +18,8 @@ COPY nginx/nginx.conf /etc/nginx/
 # COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
 # RUN cat /etc/nginx/nginx.conf
+RUN ls /etc/nginx/
+
 RUN ls /usr/share/nginx/html
 
 ARG VITE_URL
