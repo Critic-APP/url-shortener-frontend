@@ -4,10 +4,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App.tsx";
+import NoMatch from "./components/404.tsx";
 import { Toaster as Sonner } from "./components/ui/sonner.tsx";
 import "./index.css";
-import { Toaster } from "./components/ui/toaster.tsx";
-import NoMatch from "./components/404.tsx";
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
@@ -33,7 +32,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
 
-      <Toaster />
+      {/* <Toaster /> */}
       <Sonner
         richColors
         closeButton={true}
