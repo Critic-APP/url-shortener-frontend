@@ -4,7 +4,6 @@ import dot from "@/assets/ellipseicon.svg";
 import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
 import { toast } from "sonner";
-import "./App.css";
 import { ShareDialog } from "./components/ShareDialog";
 import { Button } from "./components/ui/button";
 import { api } from "./lib/utils";
