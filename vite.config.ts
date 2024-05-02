@@ -6,10 +6,11 @@ import { compression } from "vite-plugin-compression2";
 export default defineConfig({
   plugins: [
     react(),
-    compression({
-      algorithm: "brotliCompress",
-      include: /\.(html|xml|js|css|json|txt|ico|svg|ttf)$/,
-    }),
+    compression({ include: /\.(html|xml|js|css|json|txt|ico|svg|ttf)$/ }),
+    // compression({
+    //   algorithm: "brotliCompress",
+    //   include: /\.(html|xml|js|css|json|txt|ico|svg|ttf)$/,
+    // }),
   ],
   resolve: {
     alias: {
