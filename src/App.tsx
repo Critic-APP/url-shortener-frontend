@@ -45,10 +45,10 @@ function App() {
       <section className="container -mt-5 px-4 py-7 flex flex-col items-center justify-center gap-y-4">
         <div className="relative text-primary-header text-balance text-start md:text-center font-extrabold gap-y-2 mx-auto">
           {/* <h1 className="font-sans text-3xl sm:text-7xl">Shorten your URLs</h1> */}
-          <h1 className="text-3xl sm:text-5xl lg:text-7xl 2xl:text-[7.5rem]">
+          <h1 className="text-3xl sm:text-5xl lg:text-7xl">
             Shorten your URLs
           </h1>
-          <h1 className="text-3xl sm:text-5xl lg:text-7xl 2xl:text-[7.5rem]">
+          <h1 className="text-3xl sm:text-5xl lg:text-7xl">
             simple and easy
           </h1>
           {/* <Dot className="size-9 absolute top-0 left-1 " /> */}
